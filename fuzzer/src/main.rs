@@ -17,6 +17,18 @@ struct Args {
     /// Loop Count
     #[arg(short = 'l', long, value_name = "count", default_value_t = 100)]
     loop_count: usize,
+
+    /// Thread Available
+    #[arg(short = 'T', long, default_value_t = false)]
+    thread_available: bool,
+
+    /// Argument From
+    #[arg(short = 'f', long, value_name = "from", default_value_t = 0)]
+    argument_from: isize,
+
+    /// Argument To
+    #[arg(short = 't', long, value_name = "to", default_value_t = 100)]
+    argument_to: isize,
 }
 
 fn main() {
@@ -33,7 +45,11 @@ fn main() {
     // Run program for specified times
     for _ in 0..loop_count {
         for _ in 0..argument_count {
-            target_builder.arg(random_generator.gen::<u64>().to_string());
+            target_builder.arg(
+                random_generator
+                    .gen_range(args.argument_from..=args.argument_to)
+                    .to_string(),
+            );
         }
     }
 

@@ -9,6 +9,7 @@ description = "Simple Custom fuzzer"
 
 [dependencies]
 rand = "0.8.5"
+json = "0.12.4"
 
 [dependencies.clap]
 version = "4.0.17"
