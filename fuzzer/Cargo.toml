@@ -8,6 +8,7 @@ license = "MIT"
 description = "Simple Custom fuzzer"
 
 [dependencies]
+rand = "0.8.5"
 
 [dependencies.clap]
 version = "4.0.17"
