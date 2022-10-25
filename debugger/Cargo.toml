@@ -1,16 +1,14 @@
 [package]
-name = "fuzzer"
+name = "debugger"
 version = "0.0.1"
 edition = "2021"
 authors = ["Eveheeero <xhve00000@gmail.com>"]
 repository = "https://github.com/Eveheeero/debugger"
 license = "MIT"
-description = "Simple Custom Fuzzer"
+description = "Simple Custom Debugger"
 
 [dependencies]
-rand = "0.8.5"
-json = "0.12.4"
-
-[dependencies.clap]
-version = "4.0.17"
-features = ["derive"]
+fireball = "0.0.1"
+capstone = "0.11.0"
+crossterm = "0.25.0"
+tempdir = "0.3.7"
