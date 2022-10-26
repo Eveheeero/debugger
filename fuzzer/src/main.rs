@@ -8,7 +8,7 @@ use rand::Rng;
 struct Args {
     /// File Path
     #[arg(short, long)]
-    path: String,
+    path: PathBuf,
 
     /// Arguments Count
     #[arg(short = 'c', long, value_name = "count", default_value_t = 1)]
@@ -29,6 +29,10 @@ struct Args {
     /// Argument To
     #[arg(short = 't', long, value_name = "to", default_value_t = 100)]
     argument_to: isize,
+
+    /// Use Json Setting (Or for template json, use -j with none value)
+    #[arg(short = 'j', long = "json", value_name = "PATH")]
+    json_path: Option<PathBuf>,
 }
 
 fn main() {
