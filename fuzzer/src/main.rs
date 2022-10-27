@@ -36,7 +36,13 @@ struct Args {
 }
 
 fn main() {
-    let args = Args::parse();
+    let args = match Args::try_parse() {
+        Ok(args) => args,
+        Err(err) => {
+            println!("{}", err);
+            std::process::exit(0);
+        }
+    };
 
     let target_path = PathBuf::from(args.path);
     let argument_count = args.argument_count;
