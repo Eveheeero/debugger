@@ -1,0 +1,32 @@
+{
+    "target": {
+        "type": "bin | dump | get | post",
+        "src": "path/to/source | 127.0.0.1:8080"
+    },
+    "args": {
+        "1": "First argument",
+        "2": "Second argument",
+        "3": {
+            "type": "generate",
+            "rule": "1..100"
+        },
+        "4": {
+            "type": "file",
+            "rule": "program_to_run"
+        }
+    },
+    "detect": [
+        {
+            "type": "file",
+            "value": "file_result"
+        },
+        {
+            "type": "console",
+            "value": "console_result"
+        },
+        {
+            "type": "memory",
+            "value": "200KB"
+        }
+    ]
+}
